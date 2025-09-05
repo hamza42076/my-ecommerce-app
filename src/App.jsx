@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { Routes, Route } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 import Home from './Pages/Home.jsx';
 import About from './Pages/About.jsx';
 import Contact from './Pages/Contact.jsx';
@@ -15,9 +15,9 @@ const App = () => {
   return(
     <>
     <Routes>
-      <Route path='/' element={<Register/>} />
-      <Route path='/login' element={<Login/>} />
+      <Route path="/" element={<Navigate to="/register" replace />} />
       <Route path='/register' element={<Register/>} />
+      <Route path='/login' element={<Login/>} />
       <Route path='/home' element={<Home/>} />
       <Route path='/about' element= {<About/>} />
       <Route path='/contact' element= {<Contact/>} />
